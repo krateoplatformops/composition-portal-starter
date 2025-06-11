@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-composition-panel
   namespace: {{ .Release.Namespace }}
   labels:
-    krateo.io/composition-id: test
+    krateo.io/portal-page: compositions
 spec:
   widgetData:
     clickActionId: composition-click-action
