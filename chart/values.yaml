@@ -30,3 +30,4 @@ global:
 git:
   toRepo:
     org: krateoplatformops-archive
+    name: fireworksapp-v2
