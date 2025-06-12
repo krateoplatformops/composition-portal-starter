@@ -27,3 +27,6 @@ global:
   compositionNamespace: compositionNamespace
   compositionResource: compositionResource
   krateoNamespace: krateoNamespace
+git:
+  toRepo:
+    org: krateoplatformops-archive
