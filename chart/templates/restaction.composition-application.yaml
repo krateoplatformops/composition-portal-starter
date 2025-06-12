@@ -17,5 +17,5 @@ spec:
     errorKey: getNodesError
   filter: >
     {
-      nodes: (.getNodes // [])
+      application: (.getNodes // [])
     }
