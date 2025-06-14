@@ -17,5 +17,18 @@ spec:
     errorKey: getNodesError
   filter: >
     {
-      application: (.getNodes // [])
+      application: (
+        .getNodes
+        | if type == "object" then
+            .nodes = (
+              .nodes
+              | if type == "array" then . 
+                elif type == "object" then [.] 
+                else [] 
+                end
+            )
+            | .
+          else { nodes: [] }
+          end
+      )
     }
