@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   widgetData:
-    text: {{- $repo := (lookup "github.krateo.io/v1alpha1" "Repo" .Release.Namespace (printf "%s-repo" .Release.Name)) }}
+    text: {{- $repo := (lookup "github.kog.krateo.io/v1alpha1" "Repo" .Release.Namespace (printf "%s-repo" .Release.Name)) }}
           {{- if $repo }}
           "Target repository: https://github.com/{{ $repo.spec.org }}/{{ $repo.spec.name }}"
           {{- else }}
