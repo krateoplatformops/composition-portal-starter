@@ -9,5 +9,5 @@ spec:
           {{- if $repo }}
           "Target repository: https://github.com/{{ $repo.spec.org }}/{{ $repo.spec.name }}"
           {{- else }}
-          "Target repository: unknown"
+          "Target repository: in the process of being created"
           {{- end }}
