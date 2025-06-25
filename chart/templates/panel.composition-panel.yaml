@@ -14,7 +14,8 @@ spec:
     headerLeft: Ready:Unknown
     footer:
       items:
-        - resourceRefId: composition-panel-button
+        # - resourceRefId: composition-panel-button-pausereconciliation
+        - resourceRefId: composition-panel-button-delete
       tags: 
         - {{ .Release.Namespace }}
         - {{ .Values.global.compositionGroup }}
@@ -27,12 +28,12 @@ spec:
     items:
       - resourceRefId: composition-panel-paragraph
     title: {{ .Release.Name }}
-  actions:
-    navigate:
-      - id: composition-click-action
-        name: composition-click-action
-        resourceRefId: composition-tablist
-        type: navigate
+    actions:
+      navigate:
+        - id: composition-click-action
+          name: composition-click-action
+          resourceRefId: composition-tablist
+          type: navigate
   widgetDataTemplate:
     - forPath: icon.color
       expression: ${ .values.status.conditions[] | select(.type == "Ready") | if .status == "False" then "orange" elif .status == "True" then "green" else "grey" end }
@@ -47,9 +48,15 @@ spec:
       namespace: {{ .Release.Namespace }}
       resource: paragraphs
       verb: GET
-    - id: composition-panel-button
+    # - id: composition-panel-button-pausereconciliation
+    #   apiVersion: widgets.templates.krateo.io/v1beta1
+    #   name: {{ .Release.Name }}-composition-panel-button-pausereconciliation
+    #   namespace: {{ .Release.Namespace }}
+    #   resource: buttons
+    #   verb: GET
+    - id: composition-panel-button-delete
       apiVersion: widgets.templates.krateo.io/v1beta1
-      name: {{ .Release.Name }}-composition-panel-button
+      name: {{ .Release.Name }}-composition-panel-button-delete
       namespace: {{ .Release.Namespace }}
       resource: buttons
       verb: GET

@@ -1,7 +1,7 @@
 kind: Button
 apiVersion: widgets.templates.krateo.io/v1beta1
 metadata:
-  name: {{ .Release.Name }}-composition-panel-button
+  name: {{ .Release.Name }}-composition-panel-button-delete
   namespace: {{ .Release.Namespace }}
 spec:
   widgetData:
@@ -9,11 +9,15 @@ spec:
     type: default
     shape: circle
     clickActionId: delete
-  actions:
-    rest:
-      - id: delete
-        resourceRefId: delete
-        type: rest
+    actions:
+      rest:
+        - id: delete
+          resourceRefId: delete
+          type: rest
+          onEventNavigateTo:
+            eventReason: "CompositionDeleted"
+            url: "/compositions"
+            timeout: 50
   resourcesRefs:
     - id: delete
       apiVersion: {{ .Values.global.compositionGroup }}/{{ .Values.global.compositionInstalledVersion }}
