@@ -14,7 +14,7 @@ spec:
     headerLeft: Ready:Unknown
     footer:
       items:
-        - resourceRefId: composition-panel-button-pausereconciliation
+        # - resourceRefId: composition-panel-button-pausereconciliation
         - resourceRefId: composition-panel-button-delete
       tags: 
         - {{ .Release.Namespace }}
