@@ -13,15 +13,14 @@ spec:
     clickActionId: composition-click-action
     headerLeft: Ready:Unknown
     footer:
-      items:
-        # - resourceRefId: composition-panel-button-pausereconciliation
-        - resourceRefId: composition-panel-button-delete
-      tags: 
-        - {{ .Release.Namespace }}
-        - {{ .Values.global.compositionGroup }}
-        - {{ .Values.global.compositionInstalledVersion }}
-        - {{ .Values.global.compositionKind }}
-        - {{ .Values.global.compositionResource }}
+      # - resourceRefId: composition-panel-button-pausereconciliation
+      - resourceRefId: composition-panel-button-delete
+    tags: 
+      - {{ .Release.Namespace }}
+      - {{ .Values.global.compositionGroup }}
+      - {{ .Values.global.compositionInstalledVersion }}
+      - {{ .Values.global.compositionKind }}
+      - {{ .Values.global.compositionResource }}
     icon:
       name: fa-solid fa-cubes
       color: blue
