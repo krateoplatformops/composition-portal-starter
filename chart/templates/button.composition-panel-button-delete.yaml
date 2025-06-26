@@ -14,10 +14,7 @@ spec:
         - id: delete
           resourceRefId: delete
           type: rest
-          onEventNavigateTo:
-            eventReason: "CompositionDeleted"
-            url: "/compositions"
-            timeout: 50
+          onSuccessNavigateTo: /compositions
   resourcesRefs:
     - id: delete
       apiVersion: {{ .Values.global.compositionGroup }}/{{ .Values.global.compositionInstalledVersion }}
