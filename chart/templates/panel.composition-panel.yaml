@@ -31,6 +31,7 @@ spec:
           name: composition-click-action
           resourceRefId: composition-tablist
           type: navigate
+  widgetDataTemplate:
     - forPath: icon.color
       expression: ${ ((.values?.status?.conditions // []) | map(select(.type == "Ready") | if .status == "False" then "orange" elif .status == "True" then "green" else "grey" end) | first) // "grey" }
     - forPath: headerLeft
