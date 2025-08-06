@@ -17,5 +17,10 @@ spec:
     errorKey: getEventsError
   filter: >
     {
-      list: (.getEvents |= map(.eventTime = (.eventTime // "")) // [])
+      list: .getEvents |= map(
+        .eventTime = (.eventTime // "") |
+        .firstTimestamp = (.firstTimestamp // "") |
+        .lastTimestamp = (.lastTimestamp // "") |
+        .involvedObject.namespace = (.involvedObject.namespace // "")
+      ) // []
     }
